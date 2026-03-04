@@ -407,11 +407,21 @@
         OPTION C: Put the PDF in your GitHub repo at /papers/defense-financing.pdf
         Then src="/papers/defense-financing.pdf"
       -->
-      <iframe 
-        src="defense-financing.pdf"
-        title="How Defense Financing Actually Works — Sinéad O'Sullivan"
-        id="pdf-iframe">
-      </iframe>
+      <object
+        data="defense-financing.pdf"
+        type="application/pdf"
+        width="100%"
+        style="height:85vh;min-height:600px;display:block;"
+        id="pdf-object">
+        <div class="pdf-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2a1506" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          <p>Click below to read the full paper</p>
+          <a href="defense-financing.pdf" target="_blank">Open PDF</a>
+        </div>
+      </object>
     </div>
   </div>
 </section>
@@ -421,27 +431,6 @@
   <p>© 2025 Sinéad O'Sullivan · <a href="https://bttd.substack.com" target="_blank">But This Time It's Different</a> · <a href="https://sinead.co" target="_blank">sinead.co</a></p>
 </footer>
 
-<script>
-  // Show a fallback if PDF fails to load (e.g. no URL set yet)
-  const iframe = document.getElementById('pdf-iframe');
-  const container = document.getElementById('pdf-container');
-  const pdfSrc = iframe.getAttribute('src');
-
-  if (!pdfSrc || pdfSrc === 'defense-financing.pdf') {
-    container.innerHTML = `
-      <div class="pdf-placeholder">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2a1506" stroke-width="1.5">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="16" y1="13" x2="8" y2="13"/>
-          <line x1="16" y1="17" x2="8" y2="17"/>
-          <polyline points="10 9 9 9 8 9"/>
-        </svg>
-        <p>PDF will appear here once hosted</p>
-        <a href="#">Download Paper</a>
-      </div>`;
-  }
-</script>
 
 </body>
 </html>
